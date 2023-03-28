@@ -21,5 +21,8 @@ class Player : public Object {
 			if(IsKeyDown(keyset[1])) {
 				position.y += 0.1;
 			}
+
+			if(position.y < 0) position.y = 0;
+			if(position.y > GetScreenHeight()-30) position.y = GetScreenHeight()-30;
 		}
 };
