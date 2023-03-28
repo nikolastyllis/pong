@@ -8,11 +8,18 @@ class Player : public Object {
 			position = a_position;
 			id = a_id;
 			keyset = a_keyset;
-			
+
+			collider.x = position.x;
+			collider.y = position.y;
+			collider.width = 15;
+			collider.height = 30;
 		}
 
 		void update() {
 			DrawRectangle(position.x, position.y, 15, 30, WHITE);
+
+			collider.x = position.x;
+			collider.y = position.y;
 			
 			if(IsKeyDown(keyset[0])) {
 				position.y -= 0.1;
