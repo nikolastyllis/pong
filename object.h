@@ -1,8 +1,9 @@
 #pragma once
 
-class GameObject {
+class Object {
 	protected:
 		Vector2 position;
+		uint8_t id;	
 	public:
 		Vector2 get_position() {
 			return position;
@@ -12,5 +13,5 @@ class GameObject {
 			position = pos;
 		}
 
-		virtual void draw() = 0;
+		virtual void update() = 0;
 };

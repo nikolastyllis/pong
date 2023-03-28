@@ -1,21 +1,35 @@
 #include "raylib.h"
+#include <inttypes.h>
 #include "object.h"
+#include "player.h"
+#include "manager.h"
+#include <iostream>
 
 int main(void)
 {
-    InitWindow(800, 450, "Terrain");
+	Manager manager = Manager();
+	Vector2 pos1 = {10,225};
+	Vector2 pos2 = {790,225};
 
-    while (!WindowShouldClose())
-    {
-        BeginDrawing();
-            ClearBackground(BLACK);
-            
-            
-            //DrawText("Congrats! You created your first window!", 190, 200, 20, LIGHTGRAY);
-        EndDrawing();
-    }
+	Player player1 = Player(pos1, 1);
+	Player player2 = Player(pos2, 2);
+	
+	manager.add_object(&player1);
+	manager.add_object(&player2);
 
-    CloseWindow();
+    	InitWindow(800, 450, "Terrain");
 
-    return 0;
+    	while (!WindowShouldClose())
+    	{
+        	BeginDrawing();
+       		ClearBackground(BLACK);
+			            
+            	manager.update();
+        
+        	EndDrawing();
+    	}
+
+    	CloseWindow();
+
+    	return 0;
 }
