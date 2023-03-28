@@ -20,7 +20,7 @@ int main(void)
 	manager.add_object(&player1);
 	manager.add_object(&player2);
 
-    	InitWindow(800, 450, "Terrain");
+    	InitWindow(800, 450, "Pong++");
 
     	while (!WindowShouldClose())
     	{
