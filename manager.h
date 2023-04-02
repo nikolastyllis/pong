@@ -13,10 +13,6 @@ class Manager {
 						objects[i]->colliding();
 						objects[j]->colliding();
 					}
-					else {
-						objects[i]->notColliding();
-						objects[j]->notColliding();
-					}
 				}
 			}
 
