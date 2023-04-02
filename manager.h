@@ -8,6 +8,7 @@ class Manager {
 		void update() {
 			for(int i=0;i<objects.size();i++) {
 				for(int j=0;j<objects.size();j++) {
+					if(i==j) continue;
 					if(CheckCollisionRecs(objects[i]->get_collider(), objects[j]->get_collider())) {
 						objects[i]->colliding();
 						objects[j]->colliding();

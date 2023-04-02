@@ -14,10 +14,10 @@ class Ball : public Object {
 		}	
 
 		void update() {
-			collider.x = position.x;
-			collider.y = position.y;
+			collider.x = position.x - 10;
+			collider.y = position.y - 10;
 			DrawCircle(position.x, position.y, 10, WHITE);
-			DrawRectangleLines(position.x, position.y, 20, 20, GREEN);
+			DrawRectangleLines(collider.x, collider.y, 20, 20, GREEN);
 
 			if(isCollide) {
 				direction = {-0.1, 0};

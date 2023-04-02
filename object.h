@@ -16,7 +16,6 @@ class Object {
 		}
 
 		void colliding() {
-			std::cout<<"Collided\n";
 			isCollide = true;
 		}	
 
