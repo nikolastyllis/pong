@@ -1,9 +1,9 @@
+#include <iostream>
 #include "raylib.h"
 #include <inttypes.h>
 #include "object.h"
 #include "player.h"
 #include "manager.h"
-#include <iostream>
 #include "ball.h"
 
 int main(void)

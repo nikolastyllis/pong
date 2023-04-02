@@ -7,8 +7,22 @@ class Manager {
 	public:
 		void update() {
 			for(int i=0;i<objects.size();i++) {
-				objects[i]->update();
+				for(int j=0;j<objects.size();j++) {
+					if(CheckCollisionRecs(objects[i]->get_collider(), objects[j]->get_collider())) {
+						objects[i]->colliding();
+						objects[j]->colliding();
+					}
+					else {
+						objects[i]->notColliding();
+						objects[j]->notColliding();
+					}
+				}
 			}
+
+			for(int i=0;i<objects.size();i++) {
+				objects[i]->update();
+			}	
+	
 		}
 		
 		void add_object(Object* object) {

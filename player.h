@@ -17,6 +17,7 @@ class Player : public Object {
 
 		void update() {
 			DrawRectangle(position.x, position.y, 15, 30, WHITE);
+			DrawRectangleLines(position.x, position.y, 15, 30, GREEN);
 
 			collider.x = position.x;
 			collider.y = position.y;
